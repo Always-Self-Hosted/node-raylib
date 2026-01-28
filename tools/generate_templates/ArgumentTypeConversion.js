@@ -1,6 +1,7 @@
 function ArgumentTypeConversion (arg) {
-  if (arg === 'const unsigned char *') { return 'Buffer' }
-  if (arg === 'unsigned char *') { return 'Buffer' }
+  if (arg === 'const unsigned char *') { return 'Buffer|ArrayBuffer|ArrayBufferView' }
+  if (arg === 'unsigned char *') { return 'Buffer|ArrayBuffer|ArrayBufferView' }
+  if (arg === 'void *' || arg === 'const void *') { return 'Buffer|ArrayBuffer|ArrayBufferView' }
 
   if (arg === 'char') { return 'string' }
   if (arg === 'char *') { return 'string' }
